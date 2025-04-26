@@ -1,3 +1,4 @@
+
 # Python Dev Container Starter
 
 This is a minimal starter project for Python development using Docker containers and VSCode Dev Containers.
@@ -12,8 +13,25 @@ This is a minimal starter project for Python development using Docker containers
    ```bash
    gh repo clone sheepnir/my-python-container-project
    ```
-4. Open the project folder in VSCode.
-5. When prompted, click **"Reopen in Container"**.
+4. Rename the local project folder:
+   ```bash
+   mv my-python-container-project my-new-project
+   cd my-new-project
+   ```
+5. Remove old Git history and initialize a fresh repo:
+   ```bash
+   rm -rf .git
+   git init
+   git add .
+   git commit -m "Initial commit"
+   ```
+6. Create a new GitHub repository and push:
+   ```bash
+   gh repo create my-new-project --public --source=. --remote=origin
+   git push -u origin main
+   ```
+7. Open the project in VSCode.
+8. When prompted, click **"Reopen in Container"**.
 
 ---
 
@@ -62,9 +80,9 @@ When you are done working on this project and want to switch:
 
 1. Simply **close the VSCode window**.
 2. This automatically stops and removes the running container.
-3. Open your next project folder and "Reopen in Container" if needed.
+3. Open your next project folder and **Reopen in Container** if needed.
 
-Alternatively, you can manually stop containers via Docker Desktop.
+Alternatively, you can manually stop containers using Docker Desktop.
 
 ---
 
